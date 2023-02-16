@@ -1,11 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import myHeader from '@/components/header/index.vue'
+import myAside from '@/components/aside/index.vue'
+</script>
 
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>Header</el-header>
+      <el-aside>
+        <my-aside></my-aside>
+      </el-aside>
       <el-container>
-        <el-aside>Aside</el-aside>
+        <el-header>
+          <my-header></my-header>
+        </el-header>
         <el-main>
           <router-view />
         </el-main>
@@ -20,7 +27,14 @@
   .el-container {
     height: 100%;
     .el-aside {
-      width: 200px;
+      width: 300px;
+      height: 100%;
+      background-color: #545c64;
+      display: flex;
+      flex-direction: column;
+    }
+    .el-header {
+      background-color: #409eff;
     }
   }
 }
